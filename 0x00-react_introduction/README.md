@@ -2,7 +2,7 @@
 
 ## Introduction
 
-React is a popular JavaScript library for building user interfaces, particularly single-page applications. This guide will walk you through creating a basic React application, using Create React App for quick setup, understanding JSX, debugging with React Developer Tools, testing with Enzyme's Shallow rendering, and integrating React with Webpack and Babel.
+React is a popular JavaScript library for building user interfaces, particularly single-page applications. This guide will walk you through creating a basic React application, using Create React App for quick setup, understanding JSX, debugging with React Developer Tools, testing with Enzyme's Shallow rendering, and integrating Rcreate-react-appeact with Webpack and Babel.
 
 ## Table of Contents
 
