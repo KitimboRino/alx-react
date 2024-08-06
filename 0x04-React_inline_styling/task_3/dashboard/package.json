@@ -1,5 +1,5 @@
 {
-	"name": "task_5",
+	"name": "task_3",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
@@ -10,7 +10,7 @@
 		"test-watch": "jest --watch"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Rino Kitimbo",
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/core": "^7.16.5",
