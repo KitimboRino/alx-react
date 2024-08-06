@@ -5,9 +5,12 @@ import Notifications from './Notifications';
 import NotificationItem from './NotificationItem';
 import { StyleSheetTestUtils } from 'aphrodite';
 
+// Suppress style injection before each test
 beforeEach(() => {
 	StyleSheetTestUtils.suppressStyleInjection();
 });
+
+// Clear styles and resume style injection after each test
 afterEach(() => {
 	StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
 });
