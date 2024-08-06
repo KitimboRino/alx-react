@@ -1,27 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { shallow } from 'enzyme';
+import WithLogging from './WithLogging';
 
-const WithLogging = (WrappedComponent) => {
-	const getDisplayName = (WrappedComponent) =>
-		WrappedComponent.displayName || WrappedComponent.name || 'Component';
+const TestComponent = () => <p>Test Component</p>;
 
-	class WithLogging extends Component {
-		componentDidMount() {
-			console.log(`Component ${getDisplayName(WrappedComponent)} is mounted`);
-		}
+describe('WithLogging tests', () => {
+	it('should call console.log on mount and dismount', () => {
+		const spy = jest.spyOn(console, 'log').mockImplementation();
+		const NewComponent = WithLogging(TestComponent);
+		const wrapper = shallow(<NewComponent />);
 
-		componentWillUnmount() {
-			console.log(
-				`Component ${getDisplayName(WrappedComponent)} is going to unmount`
-			);
-		}
+		expect(spy).toBeCalledTimes(1);
+		wrapper.unmount();
+		expect(spy).toBeCalledTimes(2);
+		spy.mockRestore();
+	});
 
-		render() {
-			return <WrappedComponent {...this.props} />;
-		}
-	}
+	it('should log out the right message on mount and dismount', () => {
+		const spy = jest.spyOn(console, 'log').mockImplementation();
+		const NewComponent = WithLogging(TestComponent);
+		const wrapper = shallow(<NewComponent />);
 
-	WithLogging.displayName = `WithLogging(${getDisplayName(WrappedComponent)})`;
-	return WithLogging;
-};
-
-export default WithLogging;
+		expect(spy).toBeCalledTimes(1);
+		expect(spy).toBeCalledWith('Component TestComponent is mounted');
+		wrapper.unmount();
+		expect(spy).toHaveBeenCalledTimes(2);
+		expect(spy).toBeCalledWith('Component Test is going to unmount');
+		spy.mockRestore();
+	});
+});
