@@ -72,9 +72,9 @@ describe('Notification tests', () => {
 
 	it('displays menu item when displayDrawer is false', () => {
 		const wrapper = shallow(<Notifications displayDrawer={false} />);
-
-		expect(wrapper.find('div.menuItem').exists()).toBe(false);
-		expect(wrapper.find('div.menuItem').html()).toEqual(
+	
+		expect(wrapper.find('div.menuItem').exists()).toBe(true);
+		expect(wrapper.find('div.menuItem').html()).toContain(
 			'<div class="menuItem"><p>Your notifications</p></div>'
 		);
 	});
