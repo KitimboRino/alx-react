@@ -1,5 +1,5 @@
 export const getFullYear = () => {
-  return 2021;
+  return 2024;
 }
 
 export const getFooterCopy = isIndex => {
