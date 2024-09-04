@@ -32,7 +32,7 @@
     "test-watch": "jest --watch"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rino Kitimbo",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.12.16",
